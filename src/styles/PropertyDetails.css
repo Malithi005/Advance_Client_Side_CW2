@@ -1,0 +1,248 @@
+.property-details {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.btn-back {
+  padding: 0.7rem 1.5rem;
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  background: #667eea;
+  color: white;
+}
+
+.btn-favourite-large {
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-favourite-large:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-favourite-large.is-favourite {
+  background: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.property-summary {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.property-summary h1 {
+  font-size: 2.5rem;
+  color: #667eea;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.property-location-large {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.property-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  padding: 0.5rem 1rem;
+  background: #f5f5f5;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.gallery-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.property-tabs {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tab-content {
+  padding: 2rem 0;
+}
+
+.tab-content h2 {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.description-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.floorplan-placeholder {
+  text-align: center;
+}
+
+.floorplan-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.map-container {
+  width: 100%;
+  height: 500px;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.map-placeholder p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.map-note {
+  font-size: 0.9rem !important;
+  color: #999 !important;
+  max-width: 600px;
+  margin-top: 1rem !important;
+}
+
+.property-not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.property-not-found h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* React Tabs Customization */
+.react-tabs__tab-list {
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 0;
+}
+
+.react-tabs__tab {
+  padding: 1rem 2rem;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.react-tabs__tab--selected {
+  color: #667eea;
+  border-bottom: 3px solid #667eea;
+}
+
+.react-tabs__tab:hover {
+  color: #667eea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .property-details {
+    padding: 1rem;
+  }
+  
+  .details-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .btn-back,
+  .btn-favourite-large {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .property-summary {
+    padding: 1.5rem;
+  }
+  
+  .property-summary h1 {
+    font-size: 2rem;
+  }
+  
+  .property-location-large {
+    font-size: 1.1rem;
+  }
+  
+  .property-meta {
+    gap: 0.8rem;
+  }
+  
+  .meta-item {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .gallery-section,
+  .property-tabs {
+    padding: 1rem;
+  }
+  
+  .react-tabs__tab {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .map-container {
+    height: 300px;
+  }
+}
