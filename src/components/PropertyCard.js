@@ -1,43 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDraggable } from '@dnd-kit/core'; // Added for Drag and Drop
 import '../styles/PropertyCard.css';
 
 function PropertyCard({ property, addToFavourites, isFavourite }) {
-  // Handle favourite button click
+  // Setup Draggable functionality
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    id: property.id,
+    data: property, // Pass property data so the Drop handler knows which property was dragged
+  });
+
+  const style = transform ? {
+    transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
+    zIndex: 1000,
+  } : undefined;
+
   const handleFavouriteClick = (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    alert('Button clicked! Property: ' + property.id);
-    console.log('=== BUTTON CLICKED ===');
-    console.log('Property ID:', property.id);
-    console.log('addToFavourites:', addToFavourites);
-    console.log('Property:', property);
-    console.log('isFavourite:', isFavourite);
-    
-    if (addToFavourites) {
-      console.log('Calling addToFavourites...');
-      addToFavourites(property);
-      console.log('addToFavourites called successfully');
-    } else {
-      console.error('ERROR: addToFavourites is undefined!');
-    }
+    if (addToFavourites) addToFavourites(property);
   };
 
-  // Format price with commas
-  const formatPrice = (price) => {
-    return '£' + price.toLocaleString();
-  };
+  const formatPrice = (price) => '£' + price.toLocaleString();
 
-  // Truncate description to first 100 characters
   const truncateDescription = (description) => {
     const cleanDesc = description.replace(/<br>/g, ' ');
     return cleanDesc.length > 100 ? cleanDesc.substring(0, 100) + '...' : cleanDesc;
   };
 
   return (
-    <div className="property-card">
+    <div 
+      className="property-card" 
+      ref={setNodeRef} 
+      style={style} 
+      {...listeners} 
+      {...attributes}
+    >
       <div className="property-image">
-        <img src={property.picture} alt={property.location} />
+        <img src={`${window.location.origin}/${property.picture}`} 
+        alt={property.location} 
+        onError={(e) => { e.target.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found'; }}/>
         <span className="property-type">{property.type}</span>
       </div>
       
@@ -48,13 +49,15 @@ function PropertyCard({ property, addToFavourites, isFavourite }) {
         <p className="property-description">{truncateDescription(property.description)}</p>
         
         <div className="property-actions">
-          <Link to={`/property/${property.id}`} className="btn-view">
+          {/* Prevent drag listeners from interfering with buttons/links */}
+          <Link to={`/property/${property.id}`} className="btn-view" onPointerDown={e => e.stopPropagation()}>
             View Details
           </Link>
           <button 
             className={`btn-favourite ${isFavourite ? 'is-favourite' : ''}`}
             onClick={handleFavouriteClick}
             disabled={isFavourite}
+            onPointerDown={e => e.stopPropagation()}
             type="button"
           >
             {isFavourite ? '★ Favourited' : '☆ Add to Favourites'}
