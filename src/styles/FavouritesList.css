@@ -9,6 +9,19 @@
   min-height: 400px;
 }
 
+.favourites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.favourites-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
 /* Change style when property is being dragged over */
 .favourites-sidebar.is-over {
   background-color: #f0f7ff;
@@ -16,11 +29,14 @@
 }
 
 .favourite-item {
-  display: flex;
+ display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 8px;
+  position: relative;
 }
 
 .favourite-item img {
@@ -28,4 +44,67 @@
   height: 60px;
   border-radius: 4px;
   object-fit: cover;
+}
+
+.favourite-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.favourite-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.favourite-info p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.favourite-price {
+  font-weight: bold;
+  color: #6200ee; /* Matches your header color */
+}
+
+.btn-remove {
+  background: #ffeded;
+  color: #d32f2f;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+btn-clear-all {
+  background-color: transparent;
+  color: #6200ee; /* Using your signature purple */
+  border: 1px solid #6200ee;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-clear-all:hover {
+  background-color: #6200ee;
+  color: white;
+  box-shadow: 0 2px 4px rgba(98, 0, 238, 0.2);
+}
+
+.btn-clear-all:active {
+  transform: translateY(1px);
 }

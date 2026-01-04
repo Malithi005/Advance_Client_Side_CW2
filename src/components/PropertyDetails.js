@@ -36,9 +36,9 @@ function PropertyDetails({ properties, addToFavourites, favourites }) {
    * required by react-image-gallery.
    */
 
-  const galleryImages = property.images ? property.images.map(img => ({
-    original: process.env.PUBLIC_URL + '/' + img,
-    thumbnail: process.env.PUBLIC_URL + '/' + img,
+  const galleryImages = property.picture ? property.picture.map(img => ({
+  original: img.startsWith('/') ? img : '/' + img,
+  thumbnail: img.startsWith('/') ? img : '/' + img,
   })) : [];
 
   return (

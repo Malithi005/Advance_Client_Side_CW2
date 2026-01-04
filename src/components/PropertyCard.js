@@ -36,21 +36,36 @@ function PropertyCard({ property, addToFavourites, isFavourite }) {
       {...attributes}
     >
       <div className="property-image">
-        <img src={`${window.location.origin}/${property.picture}`} 
-        alt={property.location} 
-        onError={(e) => { e.target.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found'; }}/>
+        {/* We access the first image in the array [0] and ensure it has a leading slash */}
+        <img 
+          src={property.picture && property.picture.length > 0 
+            ? (property.picture[0].startsWith('/') ? property.picture[0] : `/${property.picture[0]}`)
+            : 'https://via.placeholder.com/300x200?text=No+Image+Available'
+          } 
+          alt={property.location} 
+          onError={(e) => { 
+            e.target.onerror = null; 
+            e.target.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found'; 
+          }}
+        />
         <span className="property-type">{property.type}</span>
       </div>
       
       <div className="property-details">
         <h3 className="property-price">{formatPrice(property.price)}</h3>
         <p className="property-location">{property.location}</p>
-        <p className="property-bedrooms">{property.bedrooms} bedroom{property.bedrooms !== 1 ? 's' : ''}</p>
+        <p className="property-bedrooms">
+          {property.bedrooms} bedroom{property.bedrooms !== 1 ? 's' : ''}
+        </p>
         <p className="property-description">{truncateDescription(property.description)}</p>
         
         <div className="property-actions">
-          {/* Prevent drag listeners from interfering with buttons/links */}
-          <Link to={`/property/${property.id}`} className="btn-view" onPointerDown={e => e.stopPropagation()}>
+          {/* stopPropagation is vital here so clicking buttons doesn't trigger a Drag event */}
+          <Link 
+            to={`/property/${property.id}`} 
+            className="btn-view" 
+            onPointerDown={e => e.stopPropagation()}
+          >
             View Details
           </Link>
           <button 

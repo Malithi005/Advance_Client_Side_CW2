@@ -9,11 +9,11 @@
 			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
 			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
 			"picture":[
-                "images/prop1/img1.jpg",
-                "images/prop1/img2.jpg",
-                "images/prop1/img3.jpg",
-                "images/prop1/img4.jpg",
-                "images/prop1/img5.jpg"
+                "/images/prop1/img1.jpg",
+                "/images/prop1/img2.jpg",
+                "/images/prop1/img3.jpg",
+                "/images/prop1/img4.jpg",
+                "/images/prop1/img5.jpg"
             ],
 			"url":"properties/prop1.html",
             "added": {
@@ -31,11 +31,11 @@
 			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
 			"location":"Crofton Road Orpington BR6",
 			"picture":[
-                "images/prop2/img1.jpg",
-                "images/prop2/img2.jpg",
-                "images/prop2/img3.jpg",
-                "images/prop2/img4.jpg",
-                "images/prop2/img5.jpg"
+                "/images/prop2/img1.jpg",
+                "/images/prop2/img2.jpg",
+                "/images/prop2/img3.jpg",
+                "/images/prop2/img4.jpg",
+                "/images/prop2/img5.jpg"
             ],
 			"url":"properties/prop2.html",
             "added": {
@@ -53,11 +53,11 @@
             "description": "Stunning five bedroom detached Victorian house with period features throughout. This exceptional family home offers spacious accommodation including three reception rooms, a modern kitchen/breakfast room with bi-fold doors to the garden, utility room, and ground floor cloakroom. The first floor features a master bedroom with en-suite, four further double bedrooms and a family bathroom. The property also benefits from a large rear garden, off-street parking for three cars, and a detached garage. Located in a sought-after residential area close to excellent schools.",
             "location": "High Street, Bromley BR1",
             "picture": [
-                "images/prop3/img1.jpg",
-                "images/prop3/img2.jpg",
-                "images/prop3/img3.jpg",
-                "images/prop3/img4.jpg",
-                "images/prop3/img5.jpg"
+                "/images/prop3/img1.jpg",
+                "/images/prop3/img2.jpg",
+                "/images/prop3/img3.jpeg",
+                "/images/prop3/img4.jpg",
+                "/images/prop3/img5.jpeg"
             ],
             "url": "properties/prop3.html",
             "added": {
@@ -75,11 +75,11 @@
             "description": "Modern one bedroom apartment in a sought-after development. This well-presented flat comprises an open plan living room/kitchen with integrated appliances, a spacious double bedroom with built-in wardrobes, and a contemporary bathroom suite. The property benefits from secure entry system, allocated parking, and communal gardens. Ideally located within walking distance of West Wickham station with direct trains to London, local shops, and bus routes. Perfect for first time buyers or investors.",
             "location": "Station Road, West Wickham BR4",
             "picture": [
-                "images/prop4/img1.jpg",
-                "images/prop4/img2.jpg",
-                "images/prop4/img3.jpg",
-                "images/prop4/img4.jpg",
-                "images/prop4/img5.jpg"
+                "/images/prop4/img1.jpg",
+                "/images/prop4/img2.jpg",
+                "/images/prop4/img3.jpeg",
+                "/images/prop4/img4.jpg",
+                "/images/prop4/img5.jpg"
             ],
             "url": "properties/prop4.html",
             "added": {
@@ -97,11 +97,11 @@
             "description": "Beautifully presented four bedroom family home in a quiet cul-de-sac location. The property features a bright entrance hall, separate living room, dining room, and a stunning open plan kitchen/family room with skylights and French doors to the garden. Upstairs you'll find four good sized bedrooms and a modern family bathroom. The property benefits from a landscaped rear garden, driveway parking, and garage. Situated close to popular schools, parks, and transport links including Chislehurst station.",
             "location": "Manor Park Road, Chislehurst BR7",
             "picture": [
-                "images/prop5/img1.jpg",
-                "images/prop5/img2.jpg",
-                "images/prop5/img3.jpg",
-                "images/prop5/img4.jpg",
-                "images/prop5/img5.jpg"
+                "/images/prop5/img1.jpg",
+                "/images/prop5/img2.jpg",
+                "/images/prop5/img3.jpg",
+                "/images/prop5/img4.jpg",
+                "/images/prop5/img5.jpg"
             ],
             "url": "properties/prop5.html",
             "added": {
@@ -119,11 +119,11 @@
             "description": "Spacious three bedroom apartment on the second floor of a modern purpose-built block. This impressive property offers a large open plan reception room/kitchen, three double bedrooms (master with en-suite), family bathroom, and a private balcony with pleasant views. The development features a communal gym, concierge service, and secure underground parking. Excellent transport links with Sidcup station nearby providing fast trains to London. Local amenities including shops, restaurants, and leisure facilities are within easy reach.",
             "location": "Main Road, Sidcup DA14",
             "picture": [
-                "images/prop6/img1.jpg",
-                "images/prop6/img2.jpg",
-                "images/prop6/img3.jpg",
-                "images/prop6/img4.jpg",
-                "images/prop6/img5.jpg"
+                "/images/prop6/img1.jpg",
+                "/images/prop6/img2.jpg",
+                "/images/prop6/img3.jpg",
+                "/images/prop6/img4.jpg",
+                "/images/prop6/img5.jpg"
             ],
             "url": "properties/prop6.html",
             "added": {
@@ -141,11 +141,11 @@
             "description": "Charming two bedroom cottage with character features including exposed beams and feature fireplace. The ground floor offers a cozy living room, separate dining room, and fitted kitchen. Two double bedrooms and a bathroom are situated on the first floor. The property boasts a delightful cottage garden to the rear, perfect for outdoor entertaining. Located in a peaceful residential street yet close to Hayes station with excellent transport connections, local shops, and schools. Ideal for couples or small families seeking a home with charm and character.",
             "location": "Station Approach, Hayes BR2",
             "picture": [
-                "images/prop7/img1.jpg",
-                "images/prop7/img2.jpg",
-                "images/prop7/img3.jpg",
-                "images/prop7/img4.jpg",
-                "images/prop7/img5.jpg"
+                "/images/prop7/img1.jpg",
+                "/images/prop7/img2.jpg",
+                "/images/prop7/img3.jpg",
+                "/images/prop7/img4.jpg",
+                "/images/prop7/img5.jpg"
             ],
             "url": "properties/prop7.html",
             "added": {
