@@ -35,7 +35,7 @@ function App() {
   }, [favourites]);
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <header className="app-header">
           <h1>Estate Agent Property Search</h1>
