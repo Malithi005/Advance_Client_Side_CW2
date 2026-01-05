@@ -57,7 +57,7 @@ function PropertyCard({ property, addToFavourites, isFavourite }) {
              Logic ensures path starts with '/' for correct routing from the public folder.
           */
           src={property.picture && property.picture.length > 0 
-            ? (property.picture[0].startsWith('/') ? property.picture[0] : `/${property.picture[0]}`)
+            ? process.env.PUBLIC_URL + property.picture[0]
             : 'https://via.placeholder.com/300x200?text=No+Image+Available'
           } 
           alt={property.location} 

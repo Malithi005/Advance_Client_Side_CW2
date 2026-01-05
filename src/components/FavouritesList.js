@@ -50,9 +50,9 @@ function FavouritesList({ favourites, removeFromFavourites, clearFavourites }) {
               <Link to={`/property/${property.id}`} className="favourite-link">
                 <img 
                   /* Check if picture array exists */
-                  /* Check if path starts with '/' to ensure it maps correctly to the public folder */
+                  /* Prepend process.env.PUBLIC_URL to ensure correct path for GitHub Pages */
                   src={property.picture && property.picture.length > 0 
-                    ? (property.picture[0].startsWith('/') ? property.picture[0] : `/${property.picture[0]}`) 
+                    ? process.env.PUBLIC_URL + property.picture[0]
                     : 'https://via.placeholder.com/100?text=No+Img'} 
                   alt={property.type} 
                   className="favourite-thumb"

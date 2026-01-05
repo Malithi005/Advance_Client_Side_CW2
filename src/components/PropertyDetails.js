@@ -36,8 +36,8 @@ function PropertyDetails({ properties, addToFavourites, favourites }) {
    * Ensuring paths start with a leading slash for routing consistency.
    */
   const galleryImages = property.picture ? property.picture.map(img => ({
-    original: img.startsWith('/') ? img : '/' + img,
-    thumbnail: img.startsWith('/') ? img : '/' + img,
+    original: process.env.PUBLIC_URL + img,
+    thumbnail: process.env.PUBLIC_URL + img,
   })) : [];
 
   return (
@@ -113,7 +113,7 @@ function PropertyDetails({ properties, addToFavourites, favourites }) {
               <div className="floorplan-container">
                 {/* DYNAMIC: Uses the property ID to find the unique floorplan.jpg */}
                 <img 
-                  src={`/images/${property.id}/floorplan.jpg`} 
+                  src={process.env.PUBLIC_URL + `/images/${property.id}/floorplan.jpg`} 
                   alt="Property Floor Plan" 
                   className="floorplan-img"
                   onError={(e) => { 
@@ -131,7 +131,7 @@ function PropertyDetails({ properties, addToFavourites, favourites }) {
               <div className="map-container">
                 {/* DYNAMIC: Uses the property ID to find the unique map.jpg screenshot */}
                 <img 
-                  src={`/images/${property.id}/map.jpg`} 
+                  src={process.env.PUBLIC_URL + `/images/${property.id}/map.jpg`} 
                   alt={`Map of ${property.location}`} 
                   className="location-map-img"
                   style={{ width: '100%', borderRadius: '8px', border: '1px solid #ddd' }}
