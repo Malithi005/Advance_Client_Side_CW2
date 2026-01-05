@@ -1,5 +1,3 @@
-/* src/styles/PropertyDetails.css */
-
 .property-details-container {
   max-width: 1200px;
   margin: 20px auto;
@@ -53,7 +51,7 @@
   color: white;
 }
 
-/* Main Layout: Gallery & Info */
+/* Gallery & Info */
 .details-layout {
   display: grid;
   grid-template-columns: 1fr 400px; /* Gallery takes more space than the info box */

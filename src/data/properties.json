@@ -13,7 +13,8 @@
                 "/images/prop1/img2.jpg",
                 "/images/prop1/img3.jpg",
                 "/images/prop1/img4.jpg",
-                "/images/prop1/img5.jpg"
+                "/images/prop1/img5.jpg",
+                "/images/prop1/img6.jpg"
             ],
 			"url":"properties/prop1.html",
             "added": {
@@ -35,7 +36,8 @@
                 "/images/prop2/img2.jpg",
                 "/images/prop2/img3.jpg",
                 "/images/prop2/img4.jpg",
-                "/images/prop2/img5.jpg"
+                "/images/prop2/img5.jpg",
+                "/images/prop2/img6.jpg"
             ],
 			"url":"properties/prop2.html",
             "added": {
@@ -57,7 +59,8 @@
                 "/images/prop3/img2.jpg",
                 "/images/prop3/img3.jpeg",
                 "/images/prop3/img4.jpg",
-                "/images/prop3/img5.jpeg"
+                "/images/prop3/img5.jpeg",
+                "/images/prop3/img6.jpg"
             ],
             "url": "properties/prop3.html",
             "added": {
@@ -79,7 +82,8 @@
                 "/images/prop4/img2.jpg",
                 "/images/prop4/img3.jpeg",
                 "/images/prop4/img4.jpg",
-                "/images/prop4/img5.jpg"
+                "/images/prop4/img5.jpg",
+                "/images/prop4/img6.jpg"
             ],
             "url": "properties/prop4.html",
             "added": {
@@ -101,7 +105,8 @@
                 "/images/prop5/img2.jpg",
                 "/images/prop5/img3.jpg",
                 "/images/prop5/img4.jpg",
-                "/images/prop5/img5.jpg"
+                "/images/prop5/img5.jpg",
+                "/images/prop5/img6.jpg"
             ],
             "url": "properties/prop5.html",
             "added": {
@@ -123,7 +128,8 @@
                 "/images/prop6/img2.jpg",
                 "/images/prop6/img3.jpg",
                 "/images/prop6/img4.jpg",
-                "/images/prop6/img5.jpg"
+                "/images/prop6/img5.jpg",
+                "/images/prop6/img6.jpg"
             ],
             "url": "properties/prop6.html",
             "added": {
@@ -145,7 +151,8 @@
                 "/images/prop7/img2.jpg",
                 "/images/prop7/img3.jpg",
                 "/images/prop7/img4.jpg",
-                "/images/prop7/img5.jpg"
+                "/images/prop7/img5.jpg",
+                "/images/prop7/img6.jpeg"
             ],
             "url": "properties/prop7.html",
             "added": {

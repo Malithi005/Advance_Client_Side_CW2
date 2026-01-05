@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import SearchPage from './components/SearchPage';
@@ -7,7 +7,10 @@ import propertiesData from './data/properties.json';
 
 function App() {
   // State to manage favourites across the app
-  const [favourites, setFavourites] = useState([]);
+  const [favourites, setFavourites] = useState(() => {
+  const saved = localStorage.getItem('property-favourites');
+  return saved ? JSON.parse(saved) : [];
+  });
 
   // Add property to favourites (prevent duplicates)
   const addToFavourites = (property) => {
@@ -25,6 +28,11 @@ function App() {
   const clearFavourites = () => {
     setFavourites([]);
   };
+
+  // This runs every time the "favourites" array changes
+  useEffect(() => {
+    localStorage.setItem('property-favourites', JSON.stringify(favourites));
+  }, [favourites]);
 
   return (
     <Router>

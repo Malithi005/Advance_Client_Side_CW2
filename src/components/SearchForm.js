@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import Select from 'react-select';
-import DatePicker from 'react-datepicker';
+import Select from 'react-select'; // Library for high-quality dropdown menus
+import DatePicker from 'react-datepicker'; // Library for interactive date selection
 import 'react-datepicker/dist/react-datepicker.css';
 import '../styles/SearchForm.css';
 
+/**
+ * SearchForm Component
+ * Collects user filtering preferences and sends them to the parent App component.
+ */
 function SearchForm({ onSearch }) {
+  // STATE HOOKS: Individually tracking each filter input
   const [type, setType] = useState(null);
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
@@ -14,7 +19,7 @@ function SearchForm({ onSearch }) {
   const [dateFrom, setDateFrom] = useState(null);
   const [dateTo, setDateTo] = useState(null);
 
-  // Options for React Select dropdowns
+  // DATA OPTIONS: Defined for the react-select dropdowns
   const typeOptions = [
     { value: 'any', label: 'Any' },
     { value: 'house', label: 'House' },
@@ -29,12 +34,16 @@ function SearchForm({ onSearch }) {
     { value: 5, label: '5+' }
   ];
 
+  /**
+   * HANDLER: handleSubmit
+   * Packages all current state values into a 'criteria' object to be used for filtering.
+   */
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevents the browser from reloading the page
     
     const criteria = {
-      type: type?.value,
-      minPrice: minPrice ? parseInt(minPrice) : null,
+      type: type?.value, // Uses optional chaining in case selection is null
+      minPrice: minPrice ? parseInt(minPrice) : null, // Ensures numerical comparison
       maxPrice: maxPrice ? parseInt(maxPrice) : null,
       minBedrooms: minBedrooms?.value,
       maxBedrooms: maxBedrooms?.value,
@@ -43,9 +52,14 @@ function SearchForm({ onSearch }) {
       dateTo: dateTo
     };
 
+    // Prop function to lift the state up to App.js
     onSearch(criteria);
   };
 
+  /**
+   * HANDLER: handleReset
+   * Clears all form fields and triggers a fresh search with zero filters.
+   */
   const handleReset = () => {
     setType(null);
     setMinPrice('');
@@ -55,14 +69,17 @@ function SearchForm({ onSearch }) {
     setPostcode('');
     setDateFrom(null);
     setDateTo(null);
-    onSearch({});
+    onSearch({}); // Reset the results view to show all properties
   };
 
   return (
     <form className="search-form" onSubmit={handleSubmit}>
       <h2>Search Properties</h2>
       
+      {/* CSS GRID: Organized layout for form fields */}
       <div className="form-grid">
+        
+        {/* DROPDOWN: Property Type Selection */}
         <div className="form-group">
           <label htmlFor="type">Property Type</label>
           <Select
@@ -75,6 +92,7 @@ function SearchForm({ onSearch }) {
           />
         </div>
 
+        {/* INPUT: Numerical Price Filtering */}
         <div className="form-group">
           <label htmlFor="minPrice">Min Price (£)</label>
           <input
@@ -99,6 +117,7 @@ function SearchForm({ onSearch }) {
           />
         </div>
 
+        {/* DROPDOWN: Bedroom Counts */}
         <div className="form-group">
           <label htmlFor="minBedrooms">Min Bedrooms</label>
           <Select
@@ -123,6 +142,7 @@ function SearchForm({ onSearch }) {
           />
         </div>
 
+        {/* TEXT INPUT: Postcode/Area Search */}
         <div className="form-group">
           <label htmlFor="postcode">Postcode Area</label>
           <input
@@ -134,6 +154,7 @@ function SearchForm({ onSearch }) {
           />
         </div>
 
+        {/* DATE PICKERS: Temporal Filtering */}
         <div className="form-group">
           <label htmlFor="dateFrom">Added After</label>
           <DatePicker
@@ -161,6 +182,7 @@ function SearchForm({ onSearch }) {
         </div>
       </div>
 
+      {/* FORM ACTIONS: Search and Reset buttons */}
       <div className="form-actions">
         <button type="submit" className="btn-search">Search</button>
         <button type="button" className="btn-reset" onClick={handleReset}>Reset</button>

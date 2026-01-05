@@ -1,5 +1,3 @@
-/* src/styles/PropertyCard.css */
-
 .property-card {
   background: white;
   border-radius: 12px;
@@ -95,7 +93,7 @@
 }
 
 .btn-view {
-  background: #667eea;
+  background: #c7ea66;
   color: white;
 }
 
@@ -111,5 +109,5 @@
 }
 
 .btn-view:hover {
-  background: #5a67d8;
+  background: #e7ac37;
 }

@@ -1,66 +1,77 @@
 import React from 'react';
-import { useDroppable } from '@dnd-kit/core';
-import { Link } from 'react-router-dom';
+import { useDroppable } from '@dnd-kit/core'; // Library for Drag and Drop functionality
+import { Link } from 'react-router-dom';     // Navigation component for routing
 import '../styles/FavouritesList.css';
 
-/**
- * FavouritesList Component
- * Handles the display of saved properties and acts as a drop zone for DnD.
- */
+/* Displays properties saved by the user and functions as a drop zone.*/
+
 function FavouritesList({ favourites, removeFromFavourites, clearFavourites }) {
-  // Requirement: Drag and Drop - Setting up the sidebar as a droppable zone
+  
+  // Hook to register this component as a valid drop target
+  // isOver is a boolean that becomes true when a draggable item is hovering over this div
   const { setNodeRef, isOver } = useDroppable({
     id: 'favourites-droppable',
   });
 
-  // Visual feedback when a property is being dragged over the sidebar
+  // Change appearance to provide user feedback during the drag action
   const style = {
-    backgroundColor: isOver ? '#e3f2fd' : 'transparent',
-    border: isOver ? '2px dashed #2196f3' : '2px dashed #ccc',
-    transition: 'all 0.2s ease'
+    backgroundColor: isOver ? '#FEC20C' : 'white', // highlight on hover
+    border: isOver ? '2px dashed rgb(238, 71, 0)' : '2px solid transparent', // Shows a border when active
+    transition: 'all 0.3s ease' // Smooth transition for visual effects
   };
 
-  return (
+  return (  
+    // ref={setNodeRef} connects the physical HTML element to the dnd-kit logic
     <div className="favourites-sidebar" ref={setNodeRef} style={style}>
+      
+      {/* HEADER: Shows count and provides the Clear All action */}
       <div className="favourites-header">
         <h2>My Favourites ({favourites.length})</h2>
+        {/* Only show the Clear All button if there are items to clear */}
         {favourites.length > 0 && (
           <button className="btn-clear-all" onClick={clearFavourites}>
             Clear All
-            </button>
-          )}
+          </button>
+        )}
       </div>
 
+      {/* Display instructions if list is empty */}
       {favourites.length === 0 ? (
         <div className="favourites-empty">
-          <p>Drag properties here to save them.</p>
+          <p>Drag properties here or click the star to save them.</p>
         </div>
       ) : (
         <div className="favourites-list">
+          {/* Loops through each saved property to create a list item */}
           {favourites.map(property => (
             <div key={property.id} className="favourite-item">
-              {/* Wrapped content in Link for navigation to Property Details */}
+              
+              {/*Clicking the item takes the user to the specific Property Details page */}
               <Link to={`/property/${property.id}`} className="favourite-link">
                 <img 
-                  /* FIX: Accessing the first image [0] from the picture array */
+                  /* Check if picture array exists */
+                  /* Check if path starts with '/' to ensure it maps correctly to the public folder */
                   src={property.picture && property.picture.length > 0 
                     ? (property.picture[0].startsWith('/') ? property.picture[0] : `/${property.picture[0]}`) 
                     : 'https://via.placeholder.com/100?text=No+Img'} 
                   alt={property.type} 
                   className="favourite-thumb"
+                  /* If the local image file is missing, show a placeholder */
                   onError={(e) => { e.target.src = 'https://via.placeholder.com/100?text=Error'; }}
                 />
+                
                 <div className="favourite-info">
+                  {/* .toLocaleString() adds commas to prices (e.g., 1,000,000) */}
                   <p className="favourite-price">£{property.price.toLocaleString()}</p>
                   <p className="favourite-location">{property.location}</p>
                 </div>
               </Link>
               
-              {/* Requirement: Ability to remove individual items */}
+              {/* Individual remove button */}
               <button 
                 className="btn-remove" 
                 onClick={(e) => {
-                  e.preventDefault(); // Prevents navigating to the details page
+                  e.preventDefault(); // Stop the Link from being triggered when clicking the button
                   removeFromFavourites(property.id);
                 }}
                 aria-label="Remove property"
@@ -75,7 +86,7 @@ function FavouritesList({ favourites, removeFromFavourites, clearFavourites }) {
   );
 }
 
-// Wrapper to ensure DnD context is maintained
+// Higher-Order component wrapper
 function FavouritesListWithDnD(props) {
   return <FavouritesList {...props} />;
 }

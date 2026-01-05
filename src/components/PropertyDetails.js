@@ -32,13 +32,12 @@ function PropertyDetails({ properties, addToFavourites, favourites }) {
 
   /**
    * DATA ENHANCEMENT:
-   * Maps the "images" array from properties.json to the format 
-   * required by react-image-gallery.
+   * Maps the "picture" array from JSON to the gallery format.
+   * Ensuring paths start with a leading slash for routing consistency.
    */
-
   const galleryImages = property.picture ? property.picture.map(img => ({
-  original: img.startsWith('/') ? img : '/' + img,
-  thumbnail: img.startsWith('/') ? img : '/' + img,
+    original: img.startsWith('/') ? img : '/' + img,
+    thumbnail: img.startsWith('/') ? img : '/' + img,
   })) : [];
 
   return (
@@ -56,7 +55,7 @@ function PropertyDetails({ properties, addToFavourites, favourites }) {
       </div>
 
       <div className="details-layout">
-        {/* Left Side: Image Gallery (Distinction requirement: 6-8 images) */}
+        {/* Left Side: Image Gallery */}
         <section className="gallery-section">
           <ImageGallery 
             items={galleryImages} 
@@ -89,7 +88,7 @@ function PropertyDetails({ properties, addToFavourites, favourites }) {
         </section>
       </div>
 
-      {/* Bottom Section: Tabs (Distinction requirement: Tabbed interface) */}
+      {/* Bottom Section: Tabs */}
       <div className="details-tabs-section">
         <Tabs>
           <TabList>
@@ -112,11 +111,15 @@ function PropertyDetails({ properties, addToFavourites, favourites }) {
             <div className="tab-content">
               <h3>Floor Plan</h3>
               <div className="floorplan-container">
-                {/* Placeholder for floorplan as per assignment brief guidance */}
+                {/* DYNAMIC: Uses the property ID to find the unique floorplan.jpg */}
                 <img 
-                  src="https://via.placeholder.com/800x500?text=Floor+Plan+Diagram" 
+                  src={`/images/${property.id}/floorplan.jpg`} 
                   alt="Property Floor Plan" 
                   className="floorplan-img"
+                  onError={(e) => { 
+                    e.target.onerror = null;
+                    e.target.src = 'https://via.placeholder.com/800x500?text=Floor+Plan+Not+Found'; 
+                  }}
                 />
               </div>
             </div>
@@ -126,11 +129,18 @@ function PropertyDetails({ properties, addToFavourites, favourites }) {
             <div className="tab-content">
               <h3>Map Location</h3>
               <div className="map-container">
-                {/* Embedded Map UI logic */}
-                <div className="map-placeholder">
-                  <p>📍 {property.location}</p>
-                  <small>Interactive Google Maps API would be integrated here.</small>
-                </div>
+                {/* DYNAMIC: Uses the property ID to find the unique map.jpg screenshot */}
+                <img 
+                  src={`/images/${property.id}/map.jpg`} 
+                  alt={`Map of ${property.location}`} 
+                  className="location-map-img"
+                  style={{ width: '100%', borderRadius: '8px', border: '1px solid #ddd' }}
+                  onError={(e) => { 
+                    e.target.onerror = null;
+                    e.target.src = 'https://via.placeholder.com/800x450?text=Map+Location+Not+Found'; 
+                  }}
+                />
+                <p style={{ marginTop: '10px', textAlign: 'center' }}>📍 {property.location}</p>
               </div>
             </div>
           </TabPanel>

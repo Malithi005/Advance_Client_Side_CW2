@@ -69,7 +69,7 @@
 
 .favourite-price {
   font-weight: bold;
-  color: #6200ee; /* Matches your header color */
+  color: #d32f2f;
 }
 
 .btn-remove {
@@ -89,8 +89,8 @@
 
 btn-clear-all {
   background-color: transparent;
-  color: #6200ee; /* Using your signature purple */
-  border: 1px solid #6200ee;
+  color: #eee600; 
+  border: 1px solid #ee8300;
   padding: 5px 12px;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -100,9 +100,9 @@ btn-clear-all {
 }
 
 .btn-clear-all:hover {
-  background-color: #6200ee;
+  background-color: #eea300;
   color: white;
-  box-shadow: 0 2px 4px rgba(98, 0, 238, 0.2);
+  box-shadow: 0 2px 4px rgba(198, 238, 0, 0.2);
 }
 
 .btn-clear-all:active {
